@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Ruler, Box, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Furniture3DViewer from "./Furniture3DViewer";
+import ModelViewer from "./ModelViewer";
 import type { FurnitureItem } from "@/data/furniture";
 
 interface FurnitureModalProps {
@@ -42,9 +42,12 @@ const FurnitureModal = ({ item, isOpen, onClose }: FurnitureModalProps) => {
               <X className="w-5 h-5 text-foreground" />
             </button>
 
-            {/* 3D Viewer */}
-            <div className="flex-1 bg-secondary p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-0">
-              <Furniture3DViewer item={item} />
+            {/* 3D Model Viewer with AR */}
+            <div className="flex-1 bg-secondary p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-0 relative">
+              <ModelViewer 
+                modelSrc="/models/placeholder.glb" 
+                alt={`3D model of ${item.name}`} 
+              />
             </div>
 
             {/* Product Details */}
