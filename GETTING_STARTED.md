@@ -79,6 +79,56 @@ Then open the URL it prints (usually http://localhost:4173). This simulates how 
 
 ---
 
+---
+
+## Saving your changes to GitHub
+
+After you edit files (in Cursor, VS Code, or any editor), you can save those changes to GitHub so they’re backed up and others can see them.
+
+### Step 1: Check what changed
+
+```bash
+git status
+```
+
+**What this does:** Shows which files you modified, added, or deleted. It’s like a “preview” before you commit.
+
+### Step 2: Stage your changes
+
+```bash
+git add -A
+```
+
+**What this does:** `git add` tells Git “I want to include these files in my next commit.” The `-A` means “all changes.” You can also stage specific files: `git add README.md` (just that file).
+
+### Step 3: Commit with a message
+
+```bash
+git commit -m "Describe what you changed"
+```
+
+**What this does:** Creates a snapshot of your changes with a message. The message should be short and clear, like:
+- `"Update header design"`
+- `"Add new furniture item"`
+- `"Fix 3D viewer bug"`
+
+**Example:**
+```bash
+git commit -m "Update header design and add mobile menu"
+```
+
+### Step 4: Push to GitHub
+
+```bash
+git push
+```
+
+**What this does:** Uploads your commits to GitHub. After this, your changes are live on GitHub and visible to anyone with access to the repo.
+
+**If you see an error about authentication:** GitHub might ask you to sign in. You can use a personal access token or GitHub CLI. Ask for help if you get stuck here.
+
+---
+
 ## Quick reference
 
 | Command           | When to use it                          |
@@ -87,5 +137,9 @@ Then open the URL it prints (usually http://localhost:4173). This simulates how 
 | `npm run dev`    | Work on the app locally                  |
 | `npm run build`  | Create files to deploy                   |
 | `npm run preview`| Test the production build locally        |
+| `git status`     | See what files changed                   |
+| `git add -A`     | Stage all changes for commit             |
+| `git commit -m "message"` | Save changes with a message      |
+| `git push`       | Upload commits to GitHub                 |
 
 If you hit an error, copy the full message and share it—we can debug from there.
