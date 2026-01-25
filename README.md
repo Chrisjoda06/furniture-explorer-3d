@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Furniture Explorer 3D
 
-## Project info
+A 3D furniture catalog built with React, Vite, and TypeScript. Browse curated pieces and view them in 3D with optional AR support.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech stack
 
-## How can I edit this code?
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [shadcn/ui](https://ui.shadcn.com/) + [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+- [model-viewer](https://modelviewer.dev/) (Google) for 3D/AR
 
-There are several ways of editing your application.
+## Run locally
 
-**Use Lovable**
+**Requirements:** Node.js 18+ and npm (or [Bun](https://bun.sh/)).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. Clone the repository and go to the project directory:
 
-Changes made via Lovable will be committed automatically to this repo.
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd furniture-explorer-3d
+   ```
 
-**Use your preferred IDE**
+2. Install dependencies:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   ```sh
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   Or with Bun:
 
-Follow these steps:
+   ```sh
+   bun install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+   The app runs at [http://localhost:8080](http://localhost:8080) by default.
+
+4. (Optional) Test the production build locally:
+
+   ```sh
+   npm run build
+   npm run preview
+   ```
+
+## Deploy anywhere
+
+The build outputs a **static SPA** in `dist/`. You can deploy that folder to any static host (Vercel, Netlify, GitHub Pages, Cloudflare Pages, S3 + CloudFront, etc.).
+
+**Build:**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+**Deploy:** Upload the contents of `dist/` (or configure your host to use `dist/` as the publish directory).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**SPA routing:** The app uses React Router’s `BrowserRouter`. Ensure all routes serve `index.html` so the client router can handle them. Most platforms (Vercel, Netlify, Cloudflare Pages) do this automatically for SPAs. For bare static hosts (e.g. S3, nginx), add a fallback so unknown paths return `index.html`.
 
-**Use GitHub Codespaces**
+**Examples:**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Vercel:** Connect the repo, set build command `npm run build`, output directory `dist`. No extra config needed.
+- **Netlify:** Build command `npm run build`, publish directory `dist`. Add a `_redirects` file with `/* /index.html 200` only if SPA fallback isn’t applied by default.
+- **GitHub Pages:** Build with `npm run build`, deploy `dist/`. If the app is served under a subpath (e.g. `https://user.github.io/repo/`), set `base: '/repo/'` in `vite.config.ts` and the matching `basename` for `BrowserRouter`. Root deployments need no base change.
 
-## What technologies are used for this project?
+## Scripts
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+| Command        | Description                    |
+|----------------|--------------------------------|
+| `npm run dev`  | Start Vite dev server          |
+| `npm run build`| Production build → `dist/`     |
+| `npm run preview` | Serve `dist/` locally      |
+| `npm run lint` | Run ESLint                     |
+| `npm run test` | Run Vitest                     |
