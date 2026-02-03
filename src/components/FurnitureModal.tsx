@@ -45,7 +45,7 @@ const FurnitureModal = ({ item, isOpen, onClose }: FurnitureModalProps) => {
             {/* 3D Model Viewer with AR */}
             <div className="flex-1 bg-secondary p-4 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-0 relative">
               <ModelViewer 
-                modelSrc="/models/placeholder.glb" 
+                modelSrc={item.model} 
                 alt={`3D model of ${item.name}`} 
               />
             </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 import FurnitureCard from "@/components/FurnitureCard";
 import FurnitureModal from "@/components/FurnitureModal";
 import { furnitureItems, type FurnitureItem } from "@/data/furniture";
@@ -32,7 +33,7 @@ const Index = () => {
               Our Collection
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground">
-              Timeless Pieces
+              Spaceless Pieces
             </h2>
           </div>
 
@@ -50,18 +51,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-serif text-xl font-semibold text-foreground">
-              FORMA
-            </p>
-            <p className="text-sm text-muted-foreground">
-              © 2025 Forma Furniture. Crafted with care.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* 3D Modal */}
       <FurnitureModal

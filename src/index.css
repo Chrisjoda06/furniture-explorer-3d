@@ -31,7 +31,7 @@ All colors MUST be HSL.
     --muted-foreground: 30 8% 50%;
 
     /* Sage green accent */
-    --accent: 145 25% 45%;
+    --accent: 182, 53%, 47%;
     --accent-foreground: 40 33% 98%;
 
     --destructive: 0 65% 55%;
@@ -78,7 +78,7 @@ All colors MUST be HSL.
     --muted: 30 10% 20%;
     --muted-foreground: 35 15% 60%;
 
-    --accent: 145 30% 50%;
+    --accent: 182, 53%, 47%;
     --accent-foreground: 30 15% 8%;
 
     --destructive: 0 55% 45%;
@@ -99,15 +99,22 @@ All colors MUST be HSL.
   }
 }
 
-/* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+.hero-bg {background: url(/src/assets/hero_bg.jpg); background-size: cover;}
+
+header{ padding: 1rem; }
+
+header img.logo{ width: 80%;}
+
+footer img.logo{ width: 40%;}
+
+.text-invert{color: white;}
 
 .font-serif {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
 }
 
 .font-sans {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
 }
 
 @layer base {
