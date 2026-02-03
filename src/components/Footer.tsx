@@ -4,7 +4,7 @@ const Footer = () => {
     <div className="container mx-auto px-6">
     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-serif text-xl font-semibold text-foreground">
-        <img className="logo" src="src/assets/Logo.svg" />
+        <img className="logo" src="/Logo.svg" />
         </p>
         <p className="text-sm text-muted-foreground">
         © 2120 Spacentials - Don't leave without them

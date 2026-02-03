@@ -28,7 +28,7 @@ const Header = () => {
         </nav>
 
         <a href="/" className="font-serif text-2xl font-semibold text-foreground tracking-tight">
-          <img className="logo" src="src/assets/Logo.svg" />
+          <img className="logo" src="/Logo.svg" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
